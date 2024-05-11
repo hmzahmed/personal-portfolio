@@ -1,3 +1,11 @@
+import infantFeedingLogo from "@/images/logos/if-logo.png";
+import mischoolLogo from "@/images/logos/mischool.ico";
+import micareLogo from "@/images/logos/micarelogo.png";
+import labsLogo from "@/images/logos/labs.png";
+import PxdLogo from "@/images/logos/pxd.svg";
+import sehatLogo from "@/images/logos/sehatdost.png";
+import sbLogo from "@/images/logos/sbp.svg";
+
 export const workHistory = [
   {
     organizationName: "CERP",
@@ -14,7 +22,7 @@ export const workHistory = [
       "GCP",
     ],
     responsibilies: "",
-    image: "",
+    image: labsLogo,
     href: "",
   },
   {
@@ -31,7 +39,7 @@ export const workHistory = [
       "Postgres",
     ],
     responsibilies: "",
-    image: "",
+    image: labsLogo,
     href: "",
   },
 ];
@@ -51,7 +59,7 @@ export const projects = [
       "Postgres",
       "GCP",
     ],
-    image: "",
+    image: mischoolLogo,
     href: "https://mischool.pk/",
   },
   {
@@ -69,12 +77,12 @@ export const projects = [
       "Postgres",
       "GCP",
     ],
-    image: "",
+    image: micareLogo,
   },
   {
     name: "Infant Feeding",
     description:
-      "A mobile application designed to empower Lady Health Workers (LHWs) to deliver reliable healthcare information and support to expecting and lactating mothers. LHWs can easily register patients, maintain detailed patient records, and apply integrated clinical algorithms for accurate diagnosis.",
+      "A PWA designed to empower Lady Health Workers (LHWs) to deliver reliable healthcare information and support to expecting and lactating mothers. LHWs can easily register patients, maintain detailed patient records, and apply integrated clinical algorithms for accurate diagnosis.",
     resposibilities: [],
     technologies: [
       "React",
@@ -86,7 +94,7 @@ export const projects = [
       "Postgres",
       "GCP",
     ],
-    image: "",
+    image: infantFeedingLogo,
   },
   {
     name: "PxD - Weather Advisory",
@@ -103,13 +111,13 @@ export const projects = [
       "Postgres",
       "GCP",
     ],
-    image: "",
+    image: PxdLogo,
     href: "https://precisiondev.org",
   },
   {
     name: "Sehat Dost",
     description:
-      "A web-based weather advisory and forecast system to provide custom advisories about weather patterns and farming advice. The platform was capable of launching text campaigns and generating automated calls in multiple local languages using Text to Speech conversion services.",
+      "Sehat Dost is a PWA which was developed in collaboration with the CERP Reasearch Team and UNDP. It's purpose is to serve as a Pakistan-specific information and support platform and forum on male sexual and reproductive health, mental well-being, and HIV.",
     resposibilities: [],
     technologies: [
       "React",
@@ -121,7 +129,23 @@ export const projects = [
       "Postgres",
       "GCP",
     ],
-    image: "",
+    image: sehatLogo,
     href: "https://www.sehatdost.pk/",
+  },
+  {
+    name: "Science Bowl",
+    description:
+      "A web-based real-time application (POC) that digitized the process of quiz touranments held by National Science Bowl. The application was capable of supporting upto 8 players: 4 in each opposing team, and 1 moderator for a single game session. All communication was realtime based on websockets",
+    resposibilities: [],
+    technologies: [
+      "React",
+      "Typescript",
+      "Javascript",
+      "Tailwind",
+      "Elixir",
+      "GCP",
+    ],
+    image: sbLogo,
+    href: "https://sciencebowl.pk/",
   },
 ];
