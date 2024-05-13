@@ -21,7 +21,7 @@ const description =
 
 export default function Home() {
   return (
-    <div className="h-full flex-col">
+    <div className="h-full flex-col lg:pt-20">
       <div className="flex flex-row w-full lg:h-2/3">
         <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-8">
           <div className="flex flex-col gap-2">
