@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <link rel="icon" href="/icon.ico" sizes="any" />
-        <main className="flex min-h-screen w-full flex-col items-center px-4 py-8">
+        <main className="flex overflow-auto h-screen w-full flex-col items-center px-4 py-8">
           <Header />
           <div className="w-full sm:w-4/5 xl:w-3/5 pt-14">{children}</div>
         </main>
