@@ -10,7 +10,7 @@ export default function Header() {
   const headerRef = useRef<HTMLElement>(null);
   const links = [
     { title: "Home", to: "/" },
-    { title: "About", to: "/about" },
+    // { title: "About", to: "/about" },
     { title: "Experience", to: "/work-experience" },
     { title: "Projects", to: "/projects" },
   ];
