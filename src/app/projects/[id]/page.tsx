@@ -6,5 +6,5 @@ export default function ProjectDetailPage({
   params: { id: string };
 }) {
   const project = projects[parseInt(projectId) - 1];
-  return <div className="">{project.name}</div>;
+  return <div className="">Coming Soon</div>;
 }
