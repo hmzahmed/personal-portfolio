@@ -4,21 +4,80 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
+import profilePicture from "@/images/profile.png";
+import React from "react";
+import {
+  ArrowDownIcon,
+  BriefcaseIcon,
+  GitHubIcon,
+  LinkedInIcon,
+  MailIcon,
+} from "@/components/icons";
 
-const Model = dynamic(() => import("@/components/model"));
+const MyScene = dynamic(() => import("@/components/scene"));
+
+const description =
+  "Hi, I'm Hamza. A Software Engineer with 3 years of solid experience in building Fullstack Web Apps, I have a proven track record of delivering high-quality solutions.";
 
 export default function Home() {
   return (
-    <div>
-      <div className="flex flex-row w-full">
-        <div className="w-1/2"></div>
-        <div className="w-1/2">
+    <div className="h-screen">
+      <div className="flex flex-row w-full lg:h-1/2">
+        <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-8">
+          <div className="flex flex-col gap-2">
+            <Image
+              alt="My Picture"
+              src={profilePicture}
+              className="h-20 lg:h-30 w-20 lg:w-30 overflow-hidden object-contain rounded-full"
+            />
+            <h1 className="font-bold text-2xl lg:text-4xl text-zinc-200">
+              Software Engineer
+            </h1>
+          </div>
+          <p className=" text-base lg:text-lg text-zinc-300">{description}</p>
+          <div className="flex space-x-4">
+            <a
+              className="group -m-1 p-1"
+              target="_blank"
+              href={"github.com/hmzahmed"}
+            >
+              <GitHubIcon className="h-8 w-8 fill-zinc-400 hover:fill-zinc-200 transition-all" />
+            </a>
+            <a
+              className="group -m-1 p-1"
+              target="_blank"
+              href={"https://www.linkedin.com/in/hamza-ahmed-671381204/"}
+            >
+              <LinkedInIcon className="h-8 w-8 fill-zinc-400 hover:fill-zinc-200 transition-all" />
+            </a>
+            <a
+              className="group -m-1 p-1"
+              target="_blank"
+              href={"mailto:hamzaahmed00@hotmail.com"}
+            >
+              <MailIcon className="h-8 w-8 fill-zinc-400 hover:fill-zinc-200 transition-all" />
+            </a>
+          </div>
+          <p className="text-zinc-300 text-sm">
+            Reach me at:
+            <a
+              className="ml-2 hover:underline"
+              href={"mailto:hamzaahmed00@hotmail.com"}
+            >
+              hamzaahmed00@hotmail.com
+            </a>
+          </p>
+        </div>
+        <div className="w-1/2 -z-10 hidden lg:block">
           <Suspense>
-            <Model />
+            <MyScene />
           </Suspense>
         </div>
       </div>
-      <Resume className="w-1/2" />
+      <div className="flex flex-col gap-4 lg:flex-row w-full">
+        <Resume className="lg:w-1/2 mt-4 lg:mt-0" />
+        <Skills className="lg:w-1/2 mt-4 lg:mt-0" />
+      </div>
     </div>
   );
 }
@@ -76,38 +135,45 @@ function Resume(
   );
 }
 
-function BriefcaseIcon(props: React.SVGProps<SVGSVGElement>) {
+function Skills(
+  props: React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  >
+) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
+    <div
+      className={clsx(
+        "rounded-2xl border p-6 h-full border-zinc-700/40",
+        props.className
+      )}
     >
-      <path
-        d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100/10 stroke-zinc-500"
-      />
-      <path
-        d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5"
-        className="stroke-zinc-500"
-      />
-    </svg>
+      Skills
+      <div className="gap-4 mt-4 flex flex-wrap">
+        {[
+          "React",
+          "Typescript",
+          "Javascript",
+          "Node",
+          "Tailwind",
+          "Elixir",
+          "Phoenix",
+          "Postgres",
+          "MongoDB",
+          "Firestore",
+          "GCP",
+        ].map((skill) => {
+          return <Skill key={skill} text={skill} />;
+        })}
+      </div>
+    </div>
   );
 }
 
-function ArrowDownIcon(props: React.SVGProps<SVGSVGElement>) {
+const Skill = ({ text }: { text: string }) => {
   return (
-    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
-      <path
-        d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <div className="rounded-xl max-h-max px-2 py-1 bg-zinc-700 shadow-sm text-zinc-200 transition-all hover:bg-teal-600/70">
+      {text}
+    </div>
   );
-}
+};
